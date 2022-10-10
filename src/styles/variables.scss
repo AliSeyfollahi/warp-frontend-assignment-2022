@@ -1,0 +1,12 @@
+:root {
+  --primary: #e7461a;
+  --primary-light: #fff;
+  --primary-dark: #1b1c22;
+}
+
+$theme-colors: (
+  "primary": #e7461a,
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
