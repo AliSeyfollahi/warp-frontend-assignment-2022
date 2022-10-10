@@ -2,5 +2,7 @@
   "email": "Email address",
   "password": "Password",
   "submit": "Submit",
+  "loginSuccess": "You logined successfully",
+  "loginError": "The combination of email and password is incorrect",
   "loginTitle": "Sign In"
 }

@@ -4,37 +4,43 @@
       "id": 1,
       "name": "Leah Rodriquez",
       "role": "developer",
-      "email": "l.rodriquez@example.com"
+      "email": "l.rodriquez@example.com",
+      "password": "123456"
     },
     {
       "id": 2,
       "name": "Mark Diaz",
       "role": "developer",
-      "email": "m.diaz@example.com"
+      "email": "m.diaz@example.com",
+      "password": "123456"
     },
     {
       "id": 3,
       "name": "Jayden Chapman",
       "role": "manager",
-      "email": "j.chapman@example.com"
+      "email": "j.chapman@example.com",
+      "password": "123456"
     },
     {
       "id": 4,
       "name": "Edward James",
       "role": "employee",
-      "email": "e.james@example.com"
+      "email": "e.james@example.com",
+      "password": "123456"
     },
     {
       "id": 5,
       "name": "Riley Peterson",
       "role": "employee",
-      "email": "r.peterson@example.com"
+      "email": "r.peterson@example.com",
+      "password": "123456"
     },
     {
       "id": 6,
       "name": "Robin Philips",
       "role": "employee",
-      "email": "r.philips@example.com"
+      "email": "r.philips@example.com",
+      "password": "123456"
     }
   ],
   "devices": [
