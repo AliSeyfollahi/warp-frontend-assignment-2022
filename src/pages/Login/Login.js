@@ -1,16 +1,17 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { useEffect } from 'react'
+import { Button, Form } from 'react-bootstrap'
+import { useNavigate } from "react-router-dom"
+import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify'
+import { getFormData } from '../../common/utils'
+import { userApi } from '../../api'
+import { useAuthContext } from '../../context'
 import styles from "./Login.module.scss"
-import { useTranslation } from 'react-i18next';
-import { getFormData } from '../../common/utils';
-import { userApi } from '../../api';
-import { toast } from 'react-toastify';
-import { useContext } from 'react';
-import AuthContext from '../../context/AuthContext';
 
 const Login = () => {
   const { t } = useTranslation()
-  const { setUserDetails } = useContext(AuthContext)
+  const { userDetails, setUserDetails } = useAuthContext()
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -18,10 +19,16 @@ const Login = () => {
     userApi.authenticate(data).then((data) => {
       setUserDetails(data)
       toast.success(t("loginSuccess"));
-    }).catch((error) => {
+    }).catch(() => {
       toast.error(t("loginError"));
     })
   }
+
+  useEffect(() => {
+    if (userDetails?.id) {
+      navigate("/");
+    }
+  }, [userDetails, navigate])
 
   return (
     <section className={styles.login}>

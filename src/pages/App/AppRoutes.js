@@ -1,16 +1,21 @@
 import React from "react"
+import { Suspense } from "react"
 import {
   Routes,
   Route,
-} from "react-router-dom";
+} from "react-router-dom"
 
-const Login = React.lazy(() => import('../Login'));
+const Login = React.lazy(() => import('../Login'))
+const Dashboard = React.lazy(() => import('../Dashboard'))
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <Suspense>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Dashboard />} />
+      </Routes>
+    </Suspense>
   )
 }
 export default AppRoutes

@@ -1,17 +1,15 @@
 import React from "react"
-import { useState } from "react";
+import useUserProfile from "../hooks/useUserProfile";
 
-const init = {
-  user: null
-}
+const init = { userDetails: { id: 0 }, setUserDetails: () => { } }
 
 const AuthContext = React.createContext(init);
 
 export const AuthContextProvider = ({ children }) => {
-  const [userDetails, setUserDetails] = useState();
+  const [userProfile, setUserProfile] = useUserProfile()
 
   return (
-    <AuthContext.Provider value={{ userDetails, setUserDetails }}>
+    <AuthContext.Provider value={{ userDetails: userProfile, setUserDetails: setUserProfile }}>
       {children}
     </AuthContext.Provider>)
 }

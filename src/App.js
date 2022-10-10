@@ -2,7 +2,7 @@ import React from "react";
 import {
   BrowserRouter
 } from "react-router-dom";
-import { AppRoutes, Footer, Header } from "./pages/App";
+import { AppRoutes } from "./pages/App";
 import './i18n';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,11 +12,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <Header />
         <section id="main-app" as="main">
           <AppRoutes />
         </section>
-        <Footer />
 
         <ToastContainer
           position="top-right"

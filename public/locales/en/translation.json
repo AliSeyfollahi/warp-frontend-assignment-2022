@@ -4,5 +4,7 @@
   "submit": "Submit",
   "loginSuccess": "You logined successfully",
   "loginError": "The combination of email and password is incorrect",
+  "employees":"Employees",
+  "devices":"Devices",
   "loginTitle": "Sign In"
 }

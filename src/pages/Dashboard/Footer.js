@@ -1,4 +1,4 @@
 const Footer = () => {
-  return <footer id="main-footer"></footer>
+  return <footer></footer>
 }
 export default Footer
