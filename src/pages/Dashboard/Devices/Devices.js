@@ -1,22 +1,13 @@
-import { Table } from "react-bootstrap";
 import { devicesApi, employeeApi } from '../../../api';
-import { useTranslation } from "react-i18next"
-import { useCallback } from 'react';
 import DevicesFilters from './DevicesFilters';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import AddNewDevice from "./AddNewDevice";
-import RemoveDeviceButton from "./RemoveDeviceButton";
+import AddEditDeviceButton from "./AddEditDeviceButton";
+import DevicesList from "./DevicesList";
 
 const Devices = () => {
-  const employees = employeeApi.useList()
   const [devices, setDevices] = useState([])
-
-  const { t } = useTranslation()
-
-  const getEmployeeNameById = useCallback((id) => {
-    return employees.find(e => e.id === id)?.name
-  }, [employees])
+  const employees = employeeApi.useList()
 
   const getDevices = (filter) => {
     devicesApi.list(filter).then((data) => {
@@ -35,42 +26,8 @@ const Devices = () => {
   return (
     <>
       <DevicesFilters onFilter={handleFilter} />
-      <Table striped hover>
-        <colgroup>
-          <col width={"5%"} />
-          <col width={"15%"} />
-          <col width={"35%"} />
-          <col width={"15%"} />
-          <col width={"15%"} />
-          <col width={"15%"} />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>{t("brand")}</th>
-            <th>{t("serialNumber")}</th>
-            <th>{t("product")}</th>
-            <th>{t("available")}</th>
-            <th>{t("employee")}</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {devices.map(device => (
-            <tr key={device.serialNumber}>
-              <td>{device.id}</td>
-              <td>{device.brand}</td>
-              <td>{device.serialNumber}</td>
-              <td>{device.product}</td>
-              <td>{device.available && <>✓</>}</td>
-              <td>{getEmployeeNameById(device.employeeId)}</td>
-              <td><RemoveDeviceButton id={device.id} onRemove={getDevices}/></td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-
-      <AddNewDevice onCreate={getDevices} />
+      <DevicesList devices={devices} reload={getDevices} employees={employees} />
+      <AddEditDeviceButton onAddEdit={getDevices} employees={employees} />
     </>
   )
 }

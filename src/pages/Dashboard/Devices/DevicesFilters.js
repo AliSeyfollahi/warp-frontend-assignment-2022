@@ -17,18 +17,18 @@ const DevicesFilters = ({ onFilter = () => { } }) => {
   return <Form onSubmit={handleSubmit}>
     <Container className="mb-5">
       <Row className="align-items-center">
-        <Col xs lg={3}>
+        <Col xs={12} lg={3} className="mb-3">
           <Form.Group className="py-2" controlId="formBasicEmail">
             <Form.Control name="brand" type="text" placeholder={t("brand")} />
           </Form.Group>
         </Col>
-        <Col xs lg={2} className="d-flex justify-content-center">
+        <Col xs={12} lg={2} className="d-flex justify-content-center mb-3">
           <Form.Group className="d-flex align-items-center" controlId="formBasicEmail">
             <Form.Check name="available" type="checkbox" />
             <Form.Label id="available" className="mx-2 mb-0">{t("available")}</Form.Label>
           </Form.Group>
         </Col>
-        <Col xs lg={1} className="d-grid">
+        <Col xs={12} lg={1} className="d-grid mb-3">
           <Button variant="outline-primary" type="submit" >
             {t("filter")}
           </Button>

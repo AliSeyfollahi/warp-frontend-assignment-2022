@@ -7,6 +7,10 @@ const create = (body = {}) => {
   return api.post("/devices", body)
 }
 
+const update = (body = {}) => {
+  return api.put(`/devices/${body.id}`, body)
+}
+
 const remove = (id = 0) => {
   return api.delete(`/devices/${id}`)
 }
@@ -23,6 +27,6 @@ const useList = () => {
   return devices
 }
 
-const devicesApi = { list, useList, create, remove }
+const devicesApi = { list, useList, create, remove, update }
 
 export default devicesApi

@@ -12,9 +12,11 @@
   "serialNumber":"Serial Number",
   "available":"Available",
   "remove":"Remove",
+  "edit":"Edit",
   "name":"Name",
   "role":"Role",
   "filter":"Filter",
+  "showDevices":"Show Devices",
   "addNewDevice":"Add New Device",
   "areYouSure":"Are you sure?",
   "loginTitle": "Sign In"
