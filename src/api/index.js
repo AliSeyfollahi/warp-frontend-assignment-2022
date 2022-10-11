@@ -1,4 +1,6 @@
-import userApi from "./user"
 import { api, setRequestInterceptors } from "./axios"
+import employeeApi from "./employee"
+import devicesApi from "./devices"
 
-export { userApi, api, setRequestInterceptors } 
+
+export { employeeApi, api, setRequestInterceptors, devicesApi } 

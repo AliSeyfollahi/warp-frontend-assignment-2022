@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next"
 import { toast } from 'react-toastify'
 import { getFormData } from '../../common/utils'
-import { userApi } from '../../api'
+import { employeeApi } from '../../api'
 import { useAuthContext } from '../../context'
 import styles from "./Login.module.scss"
 
@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = getFormData(e.currentTarget)
-    userApi.authenticate(data).then((data) => {
+    employeeApi.authenticate(data).then((data) => {
       setUserDetails(data)
       toast.success(t("loginSuccess"));
     }).catch(() => {

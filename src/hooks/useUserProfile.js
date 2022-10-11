@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { userApi } from "../api"
+import { employeeApi } from "../api"
 import { tokenStorageKey } from "../api/axios"
 
 const useUserProfile = (id) => {
@@ -9,7 +9,7 @@ const useUserProfile = (id) => {
   useEffect(() => {
     const userId = id ?? localStorage.getItem(tokenStorageKey)
     if (userId)
-      userApi.getUser(userId).then(data => {
+      employeeApi.getUser(userId).then(data => {
         setUserProfile(data)
       })
   }, [id])

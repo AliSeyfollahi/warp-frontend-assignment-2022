@@ -5,6 +5,15 @@
   "loginSuccess": "You logined successfully",
   "loginError": "The combination of email and password is incorrect",
   "employees":"Employees",
+  "employee":"Employee",
   "devices":"Devices",
+  "brand":"Brand",
+  "product":"Product",
+  "serialNumber":"Serial Number",
+  "available":"Available",
+  "remove":"Remove",
+  "filter":"Filter",
+  "addNewDevice":"Add New Device",
+  "areYouSure":"Are you sure?",
   "loginTitle": "Sign In"
 }

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { api, setRequestInterceptors, tokenStorageKey } from "./axios"
 
 const authenticate = ({ email = "", password = "" }) => {
@@ -22,6 +24,18 @@ const getUser = (id = 0) => {
     })
 }
 
-const userApi = { authenticate, getUser }
+const list = (id = 0) => {
+  return api.get("/employees")
+}
 
-export default userApi
+const useList = () => {
+  const [employees, setEmployees] = useState([])
+  useEffect(() => {
+    list().then(data => setEmployees(data))
+  }, [])
+  return employees
+}
+
+const employeeApi = { authenticate, getUser, useList }
+
+export default employeeApi

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import {
   Routes,
@@ -27,7 +27,7 @@ const Dashboard = () => {
       <Header />
       <Container className="py-5">
         <Routes>
-          <Route path="/devices" element={<Devices />} />
+          <Route path="devices" element={<Devices />} />
           <Route index element={<Home />} />
         </Routes>
       </Container>
