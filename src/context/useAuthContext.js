@@ -3,6 +3,7 @@ import AuthContext from "./AuthContext"
 
 const useAuthContext = () => {
   const { userDetails, setUserDetails } = useContext(AuthContext)
+
   return ({ userDetails, setUserDetails })
 }
 

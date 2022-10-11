@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import DevicesFilters from './DevicesFilters';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import AddNewFilter from "./AddNewDevice";
+import AddNewDevice from "./AddNewDevice";
 import RemoveDeviceButton from "./RemoveDeviceButton";
 
 const Devices = () => {
@@ -38,11 +38,11 @@ const Devices = () => {
       <Table striped hover>
         <colgroup>
           <col width={"5%"} />
-          <col width={"10%"} />
-          <col width={"30%"} />
-          <col width={"10%"} />
-          <col width={"10%"} />
-          <col width={"10%"} />
+          <col width={"15%"} />
+          <col width={"35%"} />
+          <col width={"15%"} />
+          <col width={"15%"} />
+          <col width={"15%"} />
         </colgroup>
         <thead>
           <tr>
@@ -70,7 +70,7 @@ const Devices = () => {
         </tbody>
       </Table>
 
-      <AddNewFilter onCreate={getDevices} />
+      <AddNewDevice onCreate={getDevices} />
     </>
   )
 }

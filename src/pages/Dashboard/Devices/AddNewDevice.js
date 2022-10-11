@@ -5,7 +5,7 @@ import { devicesApi } from "../../../api";
 import { getFormData } from "../../../common/utils";
 import { pruneData } from "./deviceHelper";
 
-const AddNewFilter = ({ onCreate = () => { } }) => {
+const AddNewDevice = ({ onCreate = () => { } }) => {
   const { t } = useTranslation()
   const [show, setShow] = useState(false);
 
@@ -71,4 +71,4 @@ const AddNewFilter = ({ onCreate = () => { } }) => {
     </>
   )
 }
-export default AddNewFilter
+export default AddNewDevice

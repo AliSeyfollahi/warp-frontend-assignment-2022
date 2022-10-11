@@ -12,6 +12,8 @@
   "serialNumber":"Serial Number",
   "available":"Available",
   "remove":"Remove",
+  "name":"Name",
+  "role":"Role",
   "filter":"Filter",
   "addNewDevice":"Add New Device",
   "areYouSure":"Are you sure?",

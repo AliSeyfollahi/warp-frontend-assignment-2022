@@ -36,6 +36,6 @@ const useList = () => {
   return employees
 }
 
-const employeeApi = { authenticate, getUser, useList }
+const employeeApi = { authenticate, getUser, useList, list }
 
 export default employeeApi

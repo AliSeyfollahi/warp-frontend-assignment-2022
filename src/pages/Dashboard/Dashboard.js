@@ -11,6 +11,7 @@ import Footer from './Footer'
 import Header from './Header'
 import Devices from './Devices/Devices'
 import Home from './Home/Home'
+import Employees from './Employees'
 
 const Dashboard = () => {
   const { userDetails } = useAuthContext()
@@ -28,6 +29,7 @@ const Dashboard = () => {
       <Container className="py-5">
         <Routes>
           <Route path="devices" element={<Devices />} />
+          <Route path="employees" element={<Employees />} />
           <Route index element={<Home />} />
         </Routes>
       </Container>
