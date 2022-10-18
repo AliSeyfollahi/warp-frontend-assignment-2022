@@ -1,5 +1,5 @@
 export const pruneData = (data) => ({
   ...data,
-  available: !!data.available,
-  employeeId: +data.employeeId
+  ...(data.available ? { available: !!data.available } : {}),
+  ...(!!data.employeeId ? { employeeId: +data.employeeId } : {})
 })
